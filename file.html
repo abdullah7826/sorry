@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Aleena Jaan ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Comic Sans MS", cursive;
+    background: linear-gradient(135deg, #ffd6e7, #e2d7ff, #d7f5ff);
+    text-align: center;
+    overflow-x: hidden;
+    color: #444;
+}
+
+/* Floating hearts */
+.floating-heart {
+    position: fixed;
+    bottom: -60px;
+    font-size: 25px;
+    animation: floatUp 7s linear infinite;
+    z-index: 0;
+}
+
+.floating-heart:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-heart:nth-child(2) {
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.floating-heart:nth-child(3) {
+    left: 55%;
+    animation-delay: 4s;
+}
+
+.floating-heart:nth-child(4) {
+    left: 80%;
+    animation-delay: 1s;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Main page */
+.container {
+    position: relative;
+    z-index: 2;
+    width: 92%;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 35px 25px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 30px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+}
+
+/* Opening screen */
+#opening {
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Male cartoon */
+.male {
+    position: relative;
+    width: 180px;
+    height: 230px;
+    margin-bottom: 20px;
+    animation: boyFloat 2s ease-in-out infinite;
+}
+
+@keyframes boyFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.head {
+    position: absolute;
+    left: 35px;
+    top: 10px;
+    width: 110px;
+    height: 110px;
+    background: #ffd0a8;
+    border: 4px solid #333;
+    border-radius: 50%;
+}
+
+.hair {
+    position: absolute;
+    top: -10px;
+    left: 5px;
+    width: 100px;
+    height: 55px;
+    background: #3b271c;
+    border-radius: 60% 60% 30% 30%;
+}
+
+.eye {
+    position: absolute;
+    top: 48px;
+    width: 12px;
+    height: 16px;
+    background: #222;
+    border-radius: 50%;
+}
+
+.eye.left {
+    left: 27px;
+}
+
+.eye.right {
+    right: 27px;
+}
+
+.sad-mouth {
+    position: absolute;
+    left: 39px;
+    top: 75px;
+    width: 30px;
+    height: 15px;
+    border-top: 4px solid #333;
+    border-radius: 50%;
+}
+
+.body {
+    position: absolute;
+    left: 48px;
+    top: 115px;
+    width: 85px;
+    height: 100px;
+    background: #6fa8ff;
+    border: 4px solid #333;
+    border-radius: 35px 35px 10px 10px;
+}
+
+.arm-left,
+.arm-right {
+    position: absolute;
+    width: 25px;
+    height: 75px;
+    background: #ffd0a8;
+    border: 4px solid #333;
+    border-radius: 20px;
+    top: 125px;
+}
+
+.arm-left {
+    left: 30px;
+    transform: rotate(25deg);
+}
+
+.arm-right {
+    right: 25px;
+    transform: rotate(-25deg);
+}
+
+/* Heart in middle */
+.big-heart {
+    font-size: 70px;
+    animation: heartbeat 1.2s infinite;
+    margin: 5px;
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+.open-title {
+    color: #ff4f81;
+    font-size: 35px;
+    margin: 10px;
+}
+
+.open-subtitle {
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: linear-gradient(45deg,#ff4f81,#ff9ab5);
+    color: white;
+    font-size: 18px;
+    font-family: "Comic Sans MS", cursive;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255,79,129,.3);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+/* Letter */
+#letterPage {
+    display: none;
+    animation: pageAppear 1s ease;
+}
+
+@keyframes pageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: #ff4f81;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.letter {
+    margin: 25px auto;
+    max-width: 720px;
+    padding: 30px;
+    background: #fffdf5;
+    border: 3px dashed #ff91ad;
+    border-radius: 22px;
+    text-align: left;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+.letter h2 {
+    text-align: center;
+    color: #ff4f81;
+    margin-bottom: 20px;
+}
+
+.letter p {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.85;
+    margin-bottom: 17px;
+}
+
+.highlight {
+    color: #ff4f81;
+    font-weight: bold;
+}
+
+/* Choice buttons */
+.choices {
+    margin-top: 25px;
+    min-height: 130px;
+}
+
+#acceptBtn {
+    background: linear-gradient(45deg,#45c96b,#79df94);
+    margin: 10px;
+}
+
+#rejectBtn {
+    background: linear-gradient(45deg,#888,#aaa);
+    margin: 10px;
+}
+
+/* Final */
+#final {
+    display: none;
+    animation: finalAppear 1.2s ease;
+}
+
+@keyframes finalAppear {
+    from {
+        opacity: 0;
+        transform: scale(.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.final-heart {
+    font-size: 100px;
+    animation: heartbeat 1s infinite;
+}
+
+.final-title {
+    color: #ff4f81;
+    font-size: 42px;
+    margin: 15px;
+}
+
+.final-text {
+    font-size: 23px;
+    line-height: 1.7;
+}
+
+/* Mobile */
+@media(max-width:600px) {
+    h1 {
+        font-size: 38px;
+    }
+
+    .open-title {
+        font-size: 28px;
+    }
+
+    .letter {
+        padding: 20px;
+    }
+
+    .letter p {
+        font-size: 16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="floating-heart">❤️</div>
+<div class="floating-heart">💗</div>
+<div class="floating-heart">💕</div>
+<div class="floating-heart">💖</div>
+
+<div class="container">
+
+    <!-- OPENING -->
+    <section id="opening">
+
+        <div class="male">
+
+            <div class="head">
+                <div class="hair"></div>
+
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+
+                <div class="sad-mouth"></div>
+            </div>
+
+            <div class="body"></div>
+
+            <div class="arm-left"></div>
+            <div class="arm-right"></div>
+
+        </div>
+
+        <div class="big-heart">❤️</div>
+
+        <div class="open-title">
+            Open It, Aleena Jaan 💌
+        </div>
+
+        <div class="open-subtitle">
+            Abdullah has something important to say...
+        </div>
+
+        <button onclick="openLetter()">
+            💌 Open My Letter
+        </button>
+
+    </section>
+
+
+    <!-- LETTER PAGE -->
+    <section id="letterPage">
+
+        <h1>I'm Really Sorry, Aleena Jaan 🥺❤️</h1>
+
+        <div class="letter">
+
+            <h2>💌 From Abdullah</h2>
+
+            <p>
+                Aleena Jaan...
+            </p>
+
+            <p>
+                Main <span class="highlight">bohot zyada sorry hoon</span>.
+                Jo baat maine tumse ki, mera woh matlab bilkul nahi tha
+                jo tumne samjha.
+            </p>
+
+            <p>
+                Shayad meri baat kehne ka tareeqa galat tha, aur agar meri
+                wajah se tum hurt hui ho, to main dil se sorry bolta hoon.
+            </p>
+
+            <p>
+                Main yeh nahi keh raha ke meri koi galti hi nahi thi.
+                Agar mujhse galti hui hai, to main uski responsibility
+                leta hoon aur tumse genuinely sorry bolta hoon.
+            </p>
+
+            <p>
+                Bas meri ek request hai, Jaan...
+                <span class="highlight">
+                please mujhe bohot zyada galat mat samajhna.
+                </span>
+            </p>
+
+            <p>
+                Jo mera matlab tha, woh shayad meri baat se clear nahi
+                ho saka. Main kabhi nahi chahta tha ke meri kisi baat
+                se tumhe bura lage.
+            </p>
+
+            <p>
+                Mujhe pata hai ke sirf "sorry" keh dene se sab kuch
+                instantly theek nahi hota. Lekin meri apology dil se hai.
+            </p>
+
+            <p>
+                Agar tum naraz ho, main samajh sakta hoon.
+                Tumhe time chahiye to main uski bhi respect karunga.
+                Bas please meri intention ko bhi samajhne ki koshish karna.
+            </p>
+
+            <p>
+                Main apni mistake se seekhna chahta hoon aur future mein
+                apni baat ko zyada carefully explain karunga.
+            </p>
+
+            <p>
+                Jaan, ek baar phir...
+                <span class="highlight">
+                I'm really, really sorry. 🥺❤️
+                </span>
+            </p>
+
+            <p>
+                Please mujhe maaf kar dena agar tumhare dil mein mere
+                liye thodi si bhi jagah hai.
+            </p>
+
+            <p style="text-align:right;">
+                With a truly sorry heart ❤️<br><br>
+                <b>— Abdullah</b>
+            </p>
+
+        </div>
+
+        <div class="choices">
+
+            <button id="acceptBtn" onclick="acceptSorry()">
+                ❤️ Accept Sorry
+            </button>
+
+            <button id="rejectBtn" onclick="rejectSorry()">
+                😔 Reject Sorry
+            </button>
+
+        </div>
+
+        <p id="counterText" style="margin-top:15px;color:#777;"></p>
+
+    </section>
+
+
+    <!-- FINAL PAGE -->
+    <section id="final">
+
+        <div class="final-heart">
+            ❤️
+        </div>
+
+        <div class="final-title">
+            Thank You, Aleena Jaan 🥺❤️
+        </div>
+
+        <div class="final-text">
+            I'm really happy that you accepted my apology. ❤️
+
+            <br><br>
+
+            I promise I'll remember this mistake,
+            learn from it, and try to be better.
+
+            <br><br>
+
+            <b>Sorry once again, Aleena Jaan. ❤️</b>
+
+            <br><br>
+
+            🌸 Thank you for understanding me. 🌸
+        </div>
+
+    </section>
+
+</div>
+
+
+<script>
+
+let rejectCount = 0;
+
+function openLetter() {
+
+    document.getElementById("opening").style.display = "none";
+
+    document.getElementById("letterPage").style.display = "block";
+}
+
+
+function rejectSorry() {
+
+    rejectCount++;
+
+    let accept = document.getElementById("acceptBtn");
+
+    /*
+       Every time Reject is clicked,
+       Accept button becomes bigger.
+    */
+
+    let newSize = 18 + (rejectCount * 4);
+
+    let newPadding = 15 + (rejectCount * 3);
+
+    accept.style.fontSize = newSize + "px";
+
+    accept.style.padding =
+        newPadding + "px " + (newPadding * 2) + "px";
+
+    document.getElementById("counterText").innerHTML =
+        "Jaan, please ek baar aur soch lo 🥺❤️";
+
+    if (rejectCount >= 5) {
+
+        document.getElementById("counterText").innerHTML =
+            "Ab Accept Sorry button kaafi bada ho gaya 😭❤️";
+
+    }
+}
+
+
+function acceptSorry() {
+
+    document.getElementById("letterPage").style.display = "none";
+
+    document.getElementById("final").style.display = "block";
+
+    // Heart rain
+    for(let i = 0; i < 35; i++) {
+
+        let heart = document.createElement("div");
+
+        heart.innerHTML =
+            ["❤️","💗","💕","💖","🌸"][Math.floor(Math.random()*5)];
+
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.bottom = "-30px";
+        heart.style.fontSize =
+            (20 + Math.random() * 35) + "px";
+
+        heart.style.zIndex = "100";
+
+        heart.style.transition = "4s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+
+            heart.style.transform =
+                "translateY(-110vh) rotate(720deg)";
+
+            heart.style.opacity = "0";
+
+        }, 100);
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        }, 4500);
+    }
+}
+
+</script>
+
+</body>
+</html>
